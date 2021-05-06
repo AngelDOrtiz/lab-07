@@ -140,5 +140,12 @@ describe('API Routes', () => {
     expect(response.body).toEqual(pet1);
   });
 
+  it('test delete route', async () => {
+    const response = await request.delete(`/api/pets/${pet1.id}`);
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(pet1);
+    
+  });
+
 });
 
