@@ -14,103 +14,104 @@ describe('API Routes', () => {
   afterAll(async () => {
     return client.end();
   });
-
-  const expectedCats = [
+  // id: expect.any(Number),
+  const pets = [
     {
       id: expect.any(Number),
       name: 'Felix',
-      type: 'Tuxedo',
+      type: 'Snake',
       url: 'cats/felix.png',
-      year: 1892,
+      owner: 'John',
       lives: 3,
       isSidekick: false
     },
     {
       id: expect.any(Number),
       name: 'Garfield',
-      type: 'Orange Tabby',
+      type: 'Orange Hamster',
       url: 'cats/garfield.jpeg',
-      year: 1978,
+      owner: '',
       lives: 7,
       isSidekick: false
     },
     {
       id: expect.any(Number),
       name: 'Duchess',
-      type: 'Angora',
+      type: 'Bird',
       url: 'cats/duchess.jpeg',
-      year: 1970,
+      owner: '',
       lives: 9,
       isSidekick: false
     },
     {
       id: expect.any(Number),
       name: 'Stimpy',
-      type: 'Manx',
+      type: 'Rat',
       url: 'cats/stimpy.jpeg',
-      year: 1990,
+      owner: '',
       lives: 1,
       isSidekick: true
     },
     {
       id: expect.any(Number),
       name: 'Sylvester',
-      type: 'Tuxedo',
+      type: 'Mouse',
       url: 'cats/sylvester.jpeg',
-      year: 1945,
+      owner: '',
       lives: 1,
       isSidekick: true
     },
     {
       id: expect.any(Number),
       name: 'Tigger',
-      type: 'Orange Tabby',
+      type: 'Tiger',
       url: 'cats/tigger.jpeg',
-      year: 1928,
+      owner: '',
       lives: 8,
       isSidekick: false
     },
     {
       id: expect.any(Number),
       name: 'Hello Kitty',
-      type: 'Angora',
+      type: 'Cat',
       url: 'cats/hello-kitty.jpeg',
-      year: 1974,
+      owner: '',
       lives: 9,
       isSidekick: false
     },
     {
       id: expect.any(Number),
       name: 'Hobbs',
-      type: 'Orange Tabby',
+      type: 'Tiger',
       url: 'cats/hobbs.jpeg',
-      year: 1985,
+      owner: 'Calvin',
       lives: 6,
       isSidekick: true
     }
   ];
+  
 
   // If a GET request is made to /api/cats, does:
   // 1) the server respond with status of 200
   // 2) the body match the expected API data?
-  it('GET /api/cats', async () => {
+  it('GET /api/pets', async () => {
     // act - make the request
-    const response = await request.get('/api/cats');
+    const response = await request.get('/api/pets');
 
     // was response OK (200)?
     expect(response.status).toBe(200);
 
     // did it return the data we expected?
-    expect(response.body).toEqual(expectedCats);
+    expect(response.body).toEqual(pets);
 
   });
 
-  // If a GET request is made to /api/cats/:id, does:
+  // If a GET request is made to /api/pets/:id, does:
   // 1) the server respond with status of 200
   // 2) the body match the expected API data for the cat with that id?
-  test('GET /api/cats/:id', async () => {
-    const response = await request.get('/api/cats/2');
+  test('GET /api/pets/:id', async () => {
+    const response = await request.get('/api/pets/2');
     expect(response.status).toBe(200);
-    expect(response.body).toEqual(expectedCats[1]);
+    expect(response.body).toEqual(pets[1]);
   });
 });
