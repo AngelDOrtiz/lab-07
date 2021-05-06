@@ -131,5 +131,14 @@ describe('API Routes', () => {
     expect(response.body).toEqual(pet1);
     pet1 = response.body;
   });
+
+  it('test put route', async () => {
+    pet1.owner = 'Al Gore';
+    const response = await request.put(`/api/pets/${pet1.id}`)
+      .send(pet1);
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(pet1);
+  });
+
 });
 
