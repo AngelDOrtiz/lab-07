@@ -1,69 +1,69 @@
 // example seed data
-const cats = [
+const pets = [
   {
     name: 'Felix',
-    type: 'Tuxedo',
+    type: 'Snake',
     url: 'cats/felix.png',
-    year: 1892,
+    owner: 'John',
     lives: 3,
     isSidekick: false
   },
   {
     name: 'Garfield',
-    type: 'Orange Tabby',
+    type: 'Orange Hamster',
     url: 'cats/garfield.jpeg',
-    year: 1978,
+    owner: '',
     lives: 7,
     isSidekick: false
   },
   {
     name: 'Duchess',
-    type: 'Angora',
+    type: 'Bird',
     url: 'cats/duchess.jpeg',
-    year: 1970,
+    owner: '',
     lives: 9,
     isSidekick: false
   },
   {
     name: 'Stimpy',
-    type: 'Manx',
+    type: 'Rat',
     url: 'cats/stimpy.jpeg',
-    year: 1990,
+    owner: '',
     lives: 1,
     isSidekick: true
   },
   {
     name: 'Sylvester',
-    type: 'Tuxedo',
+    type: 'Mouse',
     url: 'cats/sylvester.jpeg',
-    year: 1945,
+    owner: '',
     lives: 1,
     isSidekick: true
   },
   {
     name: 'Tigger',
-    type: 'Orange Tabby',
+    type: 'Tiger',
     url: 'cats/tigger.jpeg',
-    year: 1928,
+    owner: '',
     lives: 8,
     isSidekick: false
   },
   {
     name: 'Hello Kitty',
-    type: 'Angora',
+    type: 'Cat',
     url: 'cats/hello-kitty.jpeg',
-    year: 1974,
+    owner: '',
     lives: 9,
     isSidekick: false
   },
   {
     name: 'Hobbs',
-    type: 'Orange Tabby',
+    type: 'Tiger',
     url: 'cats/hobbs.jpeg',
-    year: 1985,
+    owner: 'Calvin',
     lives: 6,
     isSidekick: true
   }
 ];
 
-export default cats;
+export default pets;
